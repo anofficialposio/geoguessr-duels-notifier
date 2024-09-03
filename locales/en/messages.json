@@ -1,0 +1,90 @@
+{
+  "name": {
+    "message": "GeoGuessr Duels Notifier",
+    "description": "name"
+  },
+  "popup_title": {
+    "message": "GeoGuessr Duels Notifier",
+    "description": "popup/title"
+  },
+  "popup_options": {
+    "message": "Options",
+    "description": "popup/options"
+  },
+  "options_description": {
+    "message": "Notify you in various ways when the duel is matched.",
+    "description": "options/description"
+  },
+  "options_description_notes": {
+    "message": "Note that this extension does not work with secret/incognito/private windows.",
+    "description": "options/description/notes"
+  },
+  "options_settings_title": {
+    "message": "Settings",
+    "description": "options/settings/title"
+  },
+  "options_settings_description": {
+    "message": "If you want to enable desktop notifications, make sure you have enabled notifications from your browser in your OS settings.",
+    "description": "options/settings/description"
+  },
+  "options_tips_title": {
+    "message": "Tips",
+    "description": "options/tips/title"
+  },
+  "options_notes_title": {
+    "message": "Notes for advanced users",
+    "description": "options/notes/title"
+  },
+  "options_tips_description": {
+    "message": "You can quickly change settings by pinning the extension.",
+    "description": "options/tips/description"
+  },
+  "options_notes_note_one": {
+    "message": "This extension monitors the title of the tab/window at intervals of a few seconds. It considers the change of the title to a specific string as the start of a duel, so if the title tag is changed by other scripts or extensions, it may not work properly",
+    "description": "options/notes/note/one"
+  },
+  "options_notes_note_two": {
+    "message": "If you are playing duels on multiple tabs at the same time, it may not work properly",
+    "description": "options/notes/note/one"
+  },
+  "desktop_notification_title": {
+    "message": "GeoGuessr Duels Notifier",
+    "description": "desktop/notification/title"
+  },
+  "desktop_notification_description": {
+    "message": "The duel has been matched. It will begin soon.",
+    "description": "desktop/notification/description"
+  },
+  "voice_notification_message": {
+    "message": "Attention please. The duel will begin shortly.",
+    "description": "voice/notification/message"
+  },
+  "voice_notification_lang": {
+    "message": "en-US",
+    "description": "voice/notification/lang"
+  },
+  "settings_checkbox_notifier": {
+    "message": "Enable Notifier",
+    "description": "settings/checkbox/notifier"
+  },
+  "settings_checkbox_desktop_notification": {
+    "message": "Desktop notification",
+    "description": "settings/checkbox/desktop_notification"
+  },
+  "settings_checkbox_voice_notification": {
+    "message": "Voice notification",
+    "description": "settings/checkbox/voice_notification"
+  },
+  "settings_checkbox_tab_to_selected": {
+    "message": "Make the tab selected",
+    "description": "settings/checkbox/tab_to_selected"
+  },
+  "settings_checkbox_window_to_foreground": {
+    "message": "Bring the window to the foreground",
+    "description": "settings/checkbox/window_to_foreground"
+  },
+  "settings_checkbox_auto_disable": {
+    "message": "Automatically disable Notifier when the duel is matched (for one-time use)",
+    "description": "settings/checkbox/auto_disable"
+  }
+}

@@ -1,0 +1,82 @@
+{
+  "popup_options": {
+    "message": "設定",
+    "description": "popup/options"
+  },
+  "options_description": {
+    "message": "デュエルがマッチしたときに、いろいろな方法でお知らせします。",
+    "description": "options/description"
+  },
+  "options_description_notes": {
+    "message": "シークレット/プライベートウィンドウでは動作しませんのでご注意ください。",
+    "description": "options/description/notes"
+  },
+  "options_settings_title": {
+    "message": "設定",
+    "description": "options/settings/title"
+  },
+  "options_settings_description": {
+    "message": "デスクトップ通知を有効にする場合、OSの設定でブラウザからの通知を有効化していること確認してください。",
+    "description": "options/settings/description"
+  },
+  "options_tips_title": {
+    "message": "Tips",
+    "description": "options/tips/title"
+  },
+  "options_tips_description": {
+    "message": "ピン留めしておくと、設定の変更を素早く行うことができます。",
+    "description": "options/tips/description"
+  },
+  "options_notes_title": {
+    "message": "スクリプトなどを使っているユーザー向けの注意事項",
+    "description": "options/notes/title"
+  },
+  "options_notes_note_one": {
+    "message": "タブ/ウィンドウのtitleを数秒間隔で監視し、titleが特定の文字列に変化したことをデュエル開始とみなす仕組みのため、他のscriptや拡張でtitleタグを変更している場合、正しく動作しない可能性があります",
+    "description": "options/notes/note/one"
+  },
+  "options_notes_note_two": {
+    "message": "デュエルを複数のタブで同時に行なっている場合、正しく動作しない可能性があります",
+    "description": "options/notes/note/one"
+  },
+  "desktop_notification_title": {
+    "message": "GeoGuessr Duels Notifier",
+    "description": "desktop/notification/title"
+  },
+  "desktop_notification_description": {
+    "message": "デュエルがマッチしました",
+    "description": "desktop/notification/description"
+  },
+  "voice_notification_message": {
+    "message": "デュエルが始まります。デュエルが始まります。デュエルが始まります。",
+    "description": "voice/notification/message"
+  },
+  "voice_notification_lang": {
+    "message": "ja-JP",
+    "description": "voice/notification/lang"
+  },
+  "settings_checkbox_notifier": {
+    "message": "Notifierを有効化",
+    "description": "settings/checkbox/notifier"
+  },
+  "settings_checkbox_desktop_notification": {
+    "message": "デスクトップ通知",
+    "description": "settings/checkbox/desktop_notification"
+  },
+  "settings_checkbox_voice_notification": {
+    "message": "音声でお知らせ",
+    "description": "settings/checkbox/voice_notification"
+  },
+  "settings_checkbox_tab_to_selected": {
+    "message": "タブを強制的に選択状態にする",
+    "description": "settings/checkbox/tab_to_selected"
+  },
+  "settings_checkbox_window_to_foreground": {
+    "message": "ウィンドウを最前面に移動",
+    "description": "settings/checkbox/window_to_foreground"
+  },
+  "settings_checkbox_auto_disable": {
+    "message": "デュエルがマッチしたら自動的にNotifierを無効化 (一度きりの使用)",
+    "description": "settings/checkbox/auto_disable"
+  }
+}

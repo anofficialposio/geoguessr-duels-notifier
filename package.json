@@ -1,0 +1,57 @@
+{
+  "name": "gdn",
+  "displayName": "GeoGuessr Duels Notifier",
+  "version": "1.0.2",
+  "description": "Notify you in various ways when the duel is matched.",
+  "author": "Posio",
+  "scripts": {
+    "check": "npm run lint && npx tsc",
+    "dev": "plasmo dev",
+    "build": "plasmo build",
+    "lint": "eslint --ignore-path .gitignore --cache --cache-location ./node_modules/.cache/eslint .",
+    "package": "plasmo package",
+    "upgrade": "git pull && git fetch -p && npm ci && npm run check"
+  },
+  "dependencies": {
+    "@plasmohq/messaging": "^0.6.2",
+    "@plasmohq/storage": "^1.10.0",
+    "plasmo": "^0.89.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "@ianvs/prettier-plugin-sort-imports": "^4.1.1",
+    "@types/chrome": "^0.0.258",
+    "@types/node": "^20.11.5",
+    "@types/react": "^18.2.48",
+    "@types/react-dom": "^18.2.18",
+    "@typescript-eslint/eslint-plugin": "^7.12.0",
+    "eslint": "^8.47.0",
+    "eslint-import-resolver-typescript": "^3.6.1",
+    "eslint-plugin-jsx-a11y": "^6.8.0",
+    "eslint-plugin-react": "^7.34.2",
+    "eslint-plugin-react-hooks": "^4.6.2",
+    "prettier": "^3.2.4",
+    "typescript": "^5.3.3"
+  },
+  "manifest": {
+    "host_permissions": [
+      "https://www.geoguessr.com/*"
+    ],
+    "permissions": [
+      "notifications",
+      "tts"
+    ],
+    "default_locale": "en",
+    "web_accessible_resources": [
+      {
+        "resources": [
+          "assets/*"
+        ],
+        "matches": [
+          "https://www.geoguessr.com/*"
+        ]
+      }
+    ]
+  }
+}
