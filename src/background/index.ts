@@ -47,7 +47,7 @@ console.log(`iconUrl: ${iconUrl}`)
 
 let intervalId = null
 let settings: GdnSettings | null = null
-let isIntervalAsynclFuncRunning = false
+let isTimerAsyncFuncRunning = false
 
 const initAsync = async () => {
   console.log("initAsync")
@@ -72,8 +72,8 @@ const startTimerIfEnabled = async () => {
 
     stopTimer()
     intervalId = setInterval(() => {
-      // console.log("intervalAsynclFunc")
-      intervalAsynclFunc().then()
+      // console.log("timerAsyncFunc")
+      timerAsyncFunc().then()
     }, INTERVAL_MSEC)
   }
 }
@@ -122,18 +122,18 @@ storage.watch({
   }
 })
 
-const intervalAsynclFunc = async () => {
-  if (isIntervalAsynclFuncRunning) {
-    console.log("intervalAsynclFunc is already running")
+const timerAsyncFunc = async () => {
+  if (isTimerAsyncFuncRunning) {
+    console.log("timerAsyncFunc is already running")
     return
   }
 
   if (!settings?.nofifierEnabled) {
-    console.log("intervalAsynclFunc is called but notifier is disabled")
+    console.log("timerAsyncFunc is called but notifier is disabled")
     return
   }
 
-  isIntervalAsynclFuncRunning = true
+  isTimerAsyncFuncRunning = true
   {
     const prevTabMap = new Map(tabMap)
     tabMap.clear()
@@ -164,7 +164,7 @@ const intervalAsynclFunc = async () => {
       }
     }
   }
-  isIntervalAsynclFuncRunning = false
+  isTimerAsyncFuncRunning = false
 }
 
 const disableNotifierIfAutoDisabled = async () => {
