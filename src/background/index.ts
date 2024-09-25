@@ -71,6 +71,8 @@ const startTimerIfEnabled = async () => {
     console.log("startTimerIfEnabled")
 
     stopTimer()
+    await timerAsyncFunc()
+
     intervalId = setInterval(() => {
       // console.log("timerAsyncFunc")
       timerAsyncFunc().then()
