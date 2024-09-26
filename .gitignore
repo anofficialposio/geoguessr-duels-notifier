@@ -31,5 +31,6 @@ dist/
 
 # typescript
 .tsbuildinfo
+tsconfig.tsbuildinfo
 
 tmp/
