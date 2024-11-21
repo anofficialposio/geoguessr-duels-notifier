@@ -60,6 +60,9 @@ export const getExcludeUrls = (): string[] => {
     }
   }
 
+  // add 'https://www.geoguessr.com'
+  list.push("https://www.geoguessr.com")
+
   console.log(list)
   excludeUrls = list
   return list
