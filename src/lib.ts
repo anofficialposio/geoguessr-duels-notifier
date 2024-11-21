@@ -22,7 +22,7 @@ const EXCLUDE_URLS = [
   "https://www.geoguessr.com/multiplayer/unranked-teams"
 ]
 
-export const EXCLUDE_URL_COUNTRY_CODES = [
+const EXCLUDE_URL_COUNTRY_CODES = [
   "es",
   "de",
   "fr",
@@ -35,14 +35,33 @@ export const EXCLUDE_URL_COUNTRY_CODES = [
   "pl"
 ]
 
+// cache
+let excludeUrls = null
+
 export const getExcludeUrls = (): string[] => {
-  const list = EXCLUDE_URLS
+  if (excludeUrls) {
+    return excludeUrls
+  }
+
+  // console.log("getExcludeUrls")
+  const list = [...EXCLUDE_URLS]
+
   for (const code of EXCLUDE_URL_COUNTRY_CODES) {
     for (const url of EXCLUDE_URLS) {
-      list.push(url.replace("geoguessr.com/", `geoguessr.com/${code}/`))
+      const replaced = url.replace(
+        "www.geoguessr.com/",
+        `www.geoguessr.com/${code}/`
+      )
+      if (replaced.endsWith("/")) {
+        list.push(replaced.slice(0, -1))
+      } else {
+        list.push(replaced)
+      }
     }
   }
+
   console.log(list)
+  excludeUrls = list
   return list
 }
 
