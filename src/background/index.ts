@@ -3,6 +3,7 @@ import { Storage } from "@plasmohq/storage"
 import {
   DUEL_STARTING_TITLES,
   DUEL_WAITING_TITLES,
+  EXCLUDE_URLS,
   getGeoGuessrTabs,
   INTERVAL_MSEC,
   loadGdnSettings,
@@ -140,8 +141,14 @@ const timerAsyncFunc = async () => {
     const prevTabMap = new Map(tabMap)
     tabMap.clear()
     const latestTabs = await getGeoGuessrTabs()
+    console.log(`latestTabs: ${latestTabs.length}`)
 
-    for (const current of latestTabs) {
+    const filteredTabs = latestTabs.filter((tab) => {
+      return !EXCLUDE_URLS.includes(tab.url)
+    })
+    console.log(`filteredTabs: ${filteredTabs.length}`)
+
+    for (const current of filteredTabs) {
       // console.log(`current: ${current.title}`)
 
       const prev = prevTabMap.get(current.id)
