@@ -141,12 +141,12 @@ const timerAsyncFunc = async () => {
     const prevTabMap = new Map(tabMap)
     tabMap.clear()
     const latestTabs = await getGeoGuessrTabs()
-    console.log(`latestTabs: ${latestTabs.length}`)
+    // console.log(`latestTabs: ${latestTabs.length}`)
 
     const filteredTabs = latestTabs.filter((tab) => {
       return !EXCLUDE_URLS.includes(tab.url)
     })
-    console.log(`filteredTabs: ${filteredTabs.length}`)
+    // console.log(`filteredTabs: ${filteredTabs.length}`)
 
     for (const current of filteredTabs) {
       // console.log(`current: ${current.title}`)
