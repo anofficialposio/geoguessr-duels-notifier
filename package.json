@@ -1,7 +1,7 @@
 {
   "name": "gdn",
   "displayName": "GeoGuessr Duels Notifier",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Notify you in various ways when the duel is matched.",
   "author": "Posio",
   "scripts": {
@@ -15,7 +15,7 @@
   "dependencies": {
     "@plasmohq/messaging": "^0.6.2",
     "@plasmohq/storage": "^1.12.0",
-    "plasmo": "^0.89.1",
+    "plasmo": "^0.89.4",
     "react": "^18.2.0",
     "react-dom": "^18.3.1"
   },
@@ -23,13 +23,13 @@
     "@ianvs/prettier-plugin-sort-imports": "^4.3.1",
     "@types/chrome": "^0.0.258",
     "@types/node": "^22.5.3",
-    "@types/react": "^18.2.48",
+    "@types/react": "^18.3.12",
     "@types/react-dom": "^18.3.0",
-    "@typescript-eslint/eslint-plugin": "^8.4.0",
+    "@typescript-eslint/eslint-plugin": "^8.15.0",
     "eslint": "^8.47.0",
     "eslint-import-resolver-typescript": "^3.6.3",
     "eslint-plugin-jsx-a11y": "^6.10.0",
-    "eslint-plugin-react": "^7.35.2",
+    "eslint-plugin-react": "^7.37.2",
     "eslint-plugin-react-hooks": "^4.6.2",
     "prettier": "^3.3.3",
     "typescript": "^5.6.2"
