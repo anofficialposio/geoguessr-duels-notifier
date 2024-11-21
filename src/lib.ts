@@ -14,14 +14,37 @@ export const DUEL_STARTING_TITLES = [
   "Team Duels - GeoGuessr"
 ]
 
-export const EXCLUDE_URLS = [
+const EXCLUDE_URLS = [
   "https://www.geoguessr.com/",
-  "https://www.geoguessr.com",
   "https://www.geoguessr.com/party",
   "https://www.geoguessr.com/multiplayer/battle-royale-countries",
   "https://www.geoguessr.com/multiplayer/battle-royale-distance",
   "https://www.geoguessr.com/multiplayer/unranked-teams"
 ]
+
+export const EXCLUDE_URL_COUNTRY_CODES = [
+  "es",
+  "de",
+  "fr",
+  "it",
+  "nl",
+  "pt",
+  "sv",
+  "tr",
+  "ja",
+  "pl"
+]
+
+export const getExcludeUrls = (): string[] => {
+  const list = EXCLUDE_URLS
+  for (const code of EXCLUDE_URL_COUNTRY_CODES) {
+    for (const url of EXCLUDE_URLS) {
+      list.push(url.replace("geoguessr.com/", `geoguessr.com/${code}/`))
+    }
+  }
+  console.log(list)
+  return list
+}
 
 export const STORAGE_KEYS = {
   nofifierEnabled: "notifEnabled",
