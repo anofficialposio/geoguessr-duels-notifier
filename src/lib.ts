@@ -14,6 +14,15 @@ export const DUEL_STARTING_TITLES = [
   "Team Duels - GeoGuessr"
 ]
 
+export const EXCLUDE_URLS = [
+  "https://www.geoguessr.com/",
+  "https://www.geoguessr.com",
+  "https://www.geoguessr.com/party",
+  "https://www.geoguessr.com/multiplayer/battle-royale-countries",
+  "https://www.geoguessr.com/multiplayer/battle-royale-distance",
+  "https://www.geoguessr.com/multiplayer/unranked-teams"
+]
+
 export const STORAGE_KEYS = {
   nofifierEnabled: "notifEnabled",
   desktopNotificationEnabled: "desktopNotificationEnabled",
