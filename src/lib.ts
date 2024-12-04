@@ -17,6 +17,8 @@ export const DUEL_STARTING_TITLES = [
 const EXCLUDE_URLS = [
   "https://www.geoguessr.com/",
   "https://www.geoguessr.com/party",
+  "https://www.geoguessr.com/multiplayer",
+  "https://www.geoguessr.com/multiplayer/teams",
   "https://www.geoguessr.com/multiplayer/battle-royale-countries",
   "https://www.geoguessr.com/multiplayer/battle-royale-distance",
   "https://www.geoguessr.com/multiplayer/unranked-teams"
