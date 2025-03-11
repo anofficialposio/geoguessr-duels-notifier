@@ -1,4 +1,8 @@
 {
+  "tmp_sorry": {
+    "message": "すいません、最新のデュエルのUIに対応していないため、この拡張機能は現在正しく動作していません。修正しますので、しばらくお待ちください。",
+    "description": "tmp/sorry"
+  },
   "popup_options": {
     "message": "設定",
     "description": "popup/options"

@@ -15,6 +15,15 @@ function IndexPopup() {
         }}>
         {chrome.i18n.getMessage("popup_title")}
       </p>
+      <p
+        style={{
+          marginBottom: 24,
+          fontSize: 14,
+          fontWeight: "bold",
+          color: "red"
+        }}>
+        {chrome.i18n.getMessage("tmp_sorry")}
+      </p>
       <Settings />
       <p
         style={{
