@@ -1,7 +1,7 @@
 {
   "name": "gdn",
   "displayName": "GeoGuessr Duels Notifier",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "Notify you in various ways when the duel is matched.",
   "author": "Posio",
   "scripts": {
