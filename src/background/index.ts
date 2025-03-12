@@ -142,46 +142,6 @@ const timerAsyncFunc = async () => {
   }
 
   isTimerAsyncFuncRunning = true
-  // {
-  //   const prevTabMap = new Map(tabMap)
-  //   tabMap.clear()
-  //   const latestTabs = await getGeoGuessrTabs()
-  //   console.log(`latestTabs: ${latestTabs.length}`)
-  //   // latestTabs.forEach((tab) => {
-  //   //   console.log(`title: ${tab.title}, url: ${tab.url}`)
-  //   // })
-
-  //   const excludeUrls = getExcludeUrls()
-  //   const filteredTabs = latestTabs.filter((tab) => {
-  //     return !excludeUrls.includes(tab.url)
-  //   })
-  //   // console.log(`filteredTabs: ${filteredTabs.length}`)
-
-  //   for (const current of filteredTabs) {
-  //     // console.log(`current: ${current.title}`)
-
-  //     const prev = prevTabMap.get(current.id)
-  //     tabMap.set(current.id, current)
-
-  //     if (prev?.title && current.title && prev?.title !== current.title) {
-  //       console.log(`title changed: ${prev.title} => ${current.title}`)
-
-  //       if (
-  //         DUEL_WAITING_TITLES.includes(prev.title) &&
-  //         DUEL_STARTING_TITLES.includes(current.title)
-  //       ) {
-  //         console.log("duel starting")
-  //         await notify(current.index, current.windowId)
-  //         break
-  //       }
-
-  //       // debug
-  //       // console.error("duel starting (debug)")
-  //       // await notify(current.index, current.windowId)
-  //       // break
-  //     }
-  //   }
-  // }
 
   try {
     const prevDuelsStatusMap = new Map(duelsStatusMap)

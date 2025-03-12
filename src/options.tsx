@@ -54,7 +54,6 @@ function OptionsIndex() {
       </h2>
       <ul>
         <li>{chrome.i18n.getMessage("options_notes_note_one")} </li>
-        <li>{chrome.i18n.getMessage("options_notes_note_two")} </li>
       </ul>
 
       <hr

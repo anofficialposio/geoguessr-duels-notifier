@@ -6,7 +6,7 @@ export const config: PlasmoCSConfig = {
   matches: ["https://www.geoguessr.com/*"]
 }
 
-export const GG_MESSAGE_NAME_CHECK_STATUS = 'checkStatus'
+export const GG_MESSAGE_NAME_CHECK_STATUS = "checkStatus"
 
 export type DuelsPageStatus = "waiting" | "countdown" | "other"
 
