@@ -3,10 +3,6 @@
     "message": "GeoGuessr Duels Notifier",
     "description": "name"
   },
-  "tmp_sorry": {
-    "message": "Due to the latest changes of duels UI, this extension is not working properly. I will fix it. Please wait for a while.",
-    "description": "tmp/sorry"
-  },
   "popup_title": {
     "message": "GeoGuessr Duels Notifier",
     "description": "popup/title"

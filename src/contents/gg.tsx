@@ -6,7 +6,9 @@ export const config: PlasmoCSConfig = {
   matches: ["https://www.geoguessr.com/*"]
 }
 
-export type DuelsPageStatus = "waiting" | "starting" | "other"
+export const GG_MESSAGE_NAME_CHECK_STATUS = 'checkStatus'
+
+export type DuelsPageStatus = "waiting" | "countdown" | "other"
 
 // ref: https://www.answeroverflow.com/m/1187812316025204736
 // file extension should be .tsx to use `useMessage` hook
@@ -16,9 +18,9 @@ export default function gg() {
   // eslint-disable-next-line react-hooks/rules-of-hooks
   useMessage<string, string>(async (req, res) => {
     // console.log("Received message", req)
-    if (req.name !== "checkStatus") {
+    if (req.name !== GG_MESSAGE_NAME_CHECK_STATUS) {
       console.error("Unknown message", req)
-      res.send("Unknown message")
+      res.send(null)
       return
     }
 
@@ -30,11 +32,12 @@ export default function gg() {
       return
     }
 
-    const chatLine = document.querySelector(
-      'div[class^="chat-message_sharedRoot__"]'
+    // this element exists both in waiting and countdown screen
+    const matchMakingElement = document.querySelector(
+      'span[class^="matchmaking-layout_playerName__"]'
     )
-    if (chatLine) {
-      res.send("starting")
+    if (matchMakingElement) {
+      res.send("countdown")
       return
     }
 

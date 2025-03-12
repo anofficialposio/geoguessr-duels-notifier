@@ -1,7 +1,10 @@
 import { sendToContentScript } from "@plasmohq/messaging"
 import { Storage } from "@plasmohq/storage"
 
-import type { DuelsPageStatus } from "~contents/gg"
+import {
+  GG_MESSAGE_NAME_CHECK_STATUS,
+  type DuelsPageStatus
+} from "~contents/gg"
 import {
   DUEL_TITLES,
   getGeoGuessrTabs,
@@ -208,16 +211,19 @@ const timerAsyncFunc = async () => {
 
     for (const tab of duelTabs) {
       // console.log(`tab: ${tab.title}`)
-      const status: DuelsPageStatus = await sendToContentScript({
-        name: "checkStatus",
+      const status: DuelsPageStatus | null = await sendToContentScript({
+        name: GG_MESSAGE_NAME_CHECK_STATUS,
         tabId: tab.id
       })
       console.log(`status: ${status}`)
+      if (!status) {
+        continue
+      }
 
       const prev = prevDuelsStatusMap.get(tab.id)
       duelsStatusMap.set(tab.id, status)
 
-      if (prev === "waiting" && status === "starting") {
+      if (prev === "waiting" && status === "countdown") {
         console.log("duel starting")
         await notify(tab.index, tab.windowId)
         break
