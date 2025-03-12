@@ -4,6 +4,8 @@ const storage = new Storage()
 
 export const INTERVAL_MSEC = 1000
 
+export const DUEL_TITLES = ["Duels - GeoGuessr", "Team Duels - GeoGuessr"]
+
 /*
   確認済み: En, Ja, Deutsh, Espanol, Francais, Italiano, Portugues, Nederland, Svenska, Turkce, Polski
   未確認: ...
