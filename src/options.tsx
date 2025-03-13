@@ -26,16 +26,6 @@ function OptionsIndex() {
       <img src={iconImage} width="70" alt="app icon" />
       <h1>GeoGuessr Duels Notifier v{version}</h1>
 
-      <p
-        style={{
-          marginBottom: 24,
-          fontSize: 14,
-          fontWeight: "bold",
-          color: "red"
-        }}>
-        {chrome.i18n.getMessage("tmp_sorry")}
-      </p>
-
       <div style={{ marginTop: 18, marginBottom: 24 }}>
         <p style={{}}>{chrome.i18n.getMessage("options_description")}</p>
         <p style={{ color: "#cc0000" }}>
@@ -64,7 +54,6 @@ function OptionsIndex() {
       </h2>
       <ul>
         <li>{chrome.i18n.getMessage("options_notes_note_one")} </li>
-        <li>{chrome.i18n.getMessage("options_notes_note_two")} </li>
       </ul>
 
       <hr

@@ -3,10 +3,6 @@
     "message": "GeoGuessr Duels Notifier",
     "description": "name"
   },
-  "tmp_sorry": {
-    "message": "Due to the latest changes of duels UI, this extension is not working properly. I will fix it. Please wait for a while.",
-    "description": "tmp/sorry"
-  },
   "popup_title": {
     "message": "GeoGuessr Duels Notifier",
     "description": "popup/title"
@@ -44,10 +40,6 @@
     "description": "options/tips/description"
   },
   "options_notes_note_one": {
-    "message": "This extension monitors the title of the tab/window at intervals of a few seconds. It considers the change of the title to a specific string as the start of a duel, so if the title tag is changed by other scripts or extensions, it may not work properly",
-    "description": "options/notes/note/one"
-  },
-  "options_notes_note_two": {
     "message": "If you are playing duels on multiple tabs at the same time, it may not work properly",
     "description": "options/notes/note/one"
   },

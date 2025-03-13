@@ -1,8 +1,4 @@
 {
-  "tmp_sorry": {
-    "message": "すいません、最新のデュエルのUIに対応していないため、この拡張機能は現在正しく動作していません。修正しますので、しばらくお待ちください。",
-    "description": "tmp/sorry"
-  },
   "popup_options": {
     "message": "設定",
     "description": "popup/options"
@@ -36,10 +32,6 @@
     "description": "options/notes/title"
   },
   "options_notes_note_one": {
-    "message": "タブ/ウィンドウのtitleを数秒間隔で監視し、titleが特定の文字列に変化したことをデュエル開始とみなす仕組みのため、他のscriptや拡張でtitleタグを変更している場合、正しく動作しない可能性があります",
-    "description": "options/notes/note/one"
-  },
-  "options_notes_note_two": {
     "message": "デュエルを複数のタブで同時に行なっている場合、正しく動作しない可能性があります",
     "description": "options/notes/note/one"
   },
