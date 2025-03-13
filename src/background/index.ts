@@ -1,9 +1,12 @@
+import { sendToContentScript } from "@plasmohq/messaging"
 import { Storage } from "@plasmohq/storage"
 
 import {
-  DUEL_STARTING_TITLES,
-  DUEL_WAITING_TITLES,
-  getExcludeUrls,
+  GG_MESSAGE_NAME_CHECK_STATUS,
+  type DuelsPageStatus
+} from "~contents/gg"
+import {
+  DUEL_TITLES,
   getGeoGuessrTabs,
   INTERVAL_MSEC,
   loadGdnSettings,
@@ -35,6 +38,8 @@ chrome.runtime.onInstalled.addListener((details) => {
     })
   }
 })
+
+const duelsStatusMap = new Map<number, DuelsPageStatus>()
 
 const tabMap = new Map()
 const lastNotificationInfo: NotificationInfo = {
@@ -137,43 +142,58 @@ const timerAsyncFunc = async () => {
   }
 
   isTimerAsyncFuncRunning = true
-  {
-    const prevTabMap = new Map(tabMap)
-    tabMap.clear()
+
+  try {
+    const prevDuelsStatusMap = new Map(duelsStatusMap)
+    duelsStatusMap.clear()
+
     const latestTabs = await getGeoGuessrTabs()
     // console.log(`latestTabs: ${latestTabs.length}`)
+    // latestTabs.forEach((tab) => {
+    //   console.log(`title: ${tab.title}, url: ${tab.url}`)
+    // })
 
-    const excludeUrls = getExcludeUrls()
-    const filteredTabs = latestTabs.filter((tab) => {
-      return !excludeUrls.includes(tab.url)
+    const duelTabs = latestTabs.filter((tab) => {
+      if (!DUEL_TITLES.includes(tab.title)) {
+        return false
+      }
+
+      if (
+        !tab.url.endsWith("/multiplayer") &&
+        !tab.url.endsWith("/multiplayer/teams")
+      ) {
+        return false
+      }
+
+      return true
     })
-    // console.log(`filteredTabs: ${filteredTabs.length}`)
+    // console.log(`duelTabs: ${duelTabs.length}`)
 
-    for (const current of filteredTabs) {
-      // console.log(`current: ${current.title}`)
+    for (const tab of duelTabs) {
+      // console.log(`tab: ${tab.title}`)
+      const status: DuelsPageStatus | null = await sendToContentScript({
+        name: GG_MESSAGE_NAME_CHECK_STATUS,
+        tabId: tab.id
+      })
+      console.log(`status: ${status}`)
+      if (!status) {
+        continue
+      }
 
-      const prev = prevTabMap.get(current.id)
-      tabMap.set(current.id, current)
+      const prev = prevDuelsStatusMap.get(tab.id)
+      duelsStatusMap.set(tab.id, status)
 
-      if (prev?.title && current.title && prev?.title !== current.title) {
-        console.log(`title changed: ${prev.title} => ${current.title}`)
-
-        if (
-          DUEL_WAITING_TITLES.includes(prev.title) &&
-          DUEL_STARTING_TITLES.includes(current.title)
-        ) {
-          console.log("duel starting")
-          await notify(current.index, current.windowId)
-          break
-        }
-
-        // debug
-        // console.error("duel starting (debug)")
-        // await notify(current.index, current.windowId)
-        // break
+      if (prev === "waiting" && status === "countdown") {
+        console.log("duel starting")
+        await notify(tab.index, tab.windowId)
+        break
       }
     }
+  } catch (e) {
+    // ignore error
+    console.error(e)
   }
+
   isTimerAsyncFuncRunning = false
 }
 
