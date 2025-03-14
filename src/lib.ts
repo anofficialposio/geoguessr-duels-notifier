@@ -4,8 +4,6 @@ const storage = new Storage()
 
 export const INTERVAL_MSEC = 1000
 
-export const DUEL_TITLES = ["Duels - GeoGuessr", "Team Duels - GeoGuessr"]
-
 export const STORAGE_KEYS = {
   nofifierEnabled: "notifEnabled",
   desktopNotificationEnabled: "desktopNotificationEnabled",

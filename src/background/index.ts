@@ -6,7 +6,6 @@ import {
   type DuelsPageStatus
 } from "~contents/gg"
 import {
-  DUEL_TITLES,
   getGeoGuessrTabs,
   INTERVAL_MSEC,
   loadGdnSettings,
@@ -154,10 +153,6 @@ const timerAsyncFunc = async () => {
     // })
 
     const duelTabs = latestTabs.filter((tab) => {
-      if (!DUEL_TITLES.includes(tab.title)) {
-        return false
-      }
-
       if (
         !tab.url.endsWith("/multiplayer") &&
         !tab.url.endsWith("/multiplayer/teams")
