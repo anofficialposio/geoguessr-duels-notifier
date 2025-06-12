@@ -26,14 +26,13 @@ const sendPing = async () => {
   lastPinged = now
 
   const extensionId = chrome.runtime.id
-  const res = await sendToBackground({
+  await sendToBackground({
     name: "ping",
     body: {
       ping: "ping"
     },
     extensionId
   })
-  console.log(JSON.stringify(res, null, 2))
 }
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
