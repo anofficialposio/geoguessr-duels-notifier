@@ -178,7 +178,10 @@ const timerAsyncFunc = async () => {
       const prev = prevDuelsStatusMap.get(tab.id)
       duelsStatusMap.set(tab.id, status)
 
-      if (prev === "waiting" && status === "countdown") {
+      if (
+        (prev === "waiting" && status === "countdown") ||
+        (prev === "waiting" && status === "ongoing")
+      ) {
         console.log("duel starting")
         await notify(tab.index, tab.windowId)
         break
